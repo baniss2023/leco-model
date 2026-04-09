@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Les structures conditionnelles</title>
+<link href="assets/style.css" rel="stylesheet"/>
+<link href="assets/print.css" media="print" rel="stylesheet"/>
+</head>
+<body class="theme-powershell" id="top">
+<a aria-label="Retour en haut" class="back-to-top" href="#top">↑</a>
+<header class="topbar">
+<div class="topbar-inner">
+<section aria-label="Informations principales de la leçon" class="page-identity-strip page-identity-strip-topbar">
+<article class="identity-card identity-card-person">
+<div class="identity-media">
+<img alt="Anis Ghaieb" src="img/anis.png"/>
+</div>
+<div class="identity-copy">
+<strong>Anis Ghaieb</strong>
+<span>baniss2002@gmail.com</span>
+</div>
+</article>
+<article class="identity-card identity-card-course">
+<div class="identity-copy">
+<strong>Programmation I: introduction aux algorithmes</strong>
+</div>
+</article>
+<article class="identity-card identity-card-college">
+<div aria-label="Collège Universel" class="identity-media identity-media-logo">
+<span aria-hidden="true" class="identity-logo-fallback">CU</span>
+</div>
+<div class="identity-copy">
+<strong>Collège Universel</strong>
+<span>Campus Montréal</span>
+</div>
+</article>
+</section>
+</div>
+</header>
+<main class="document document-powershell">
+<header class="document-header document-header-hybrid">
+<section aria-label="Présentation de la leçon" class="hero-wrap hero-wrap-powershell hero-wrap-overlay">
+<div class="hero-image-box hero-image-box-overlay hero-image-box-triple">
+<div class="hero-split-banner" aria-label="Visuel principal de la leçon">
+<figure class="hero-split-item hero-split-side hero-split-left">
+<img alt="Icônes technologiques complémentaires à gauche" src="img/icones2.png"/>
+</figure>
+<figure class="hero-split-item hero-split-center">
+<img alt="Bannière centrale de la leçon sur les structures conditionnelles" id="heroImage" src="img/bann-milieu.png"/>
+</figure>
+<figure class="hero-split-item hero-split-side hero-split-right">
+<img alt="Icônes technologiques complémentaires à droite" src="img/icones1.png"/>
+</figure>
+</div>
+</div>
+<section class="hero-title-panel">
+<h1 class="lesson-title-hybrid hero-title-overlay">Les structures conditionnelles</h1>
+</section>
+<section class="lesson-intro-box lesson-intro-box-fullwidth">
+<p class="lesson-subtitle-hybrid">Les structures conditionnelles sont essentielles en programmation, car elles permettent à un programme de prendre une décision. Sans elles, un programme exécuterait toujours les mêmes instructions dans le même ordre. Grâce aux conditions, il peut adapter son comportement selon une situation précise.</p>
+</section>
+</section>
+<section aria-label="Vue d’ensemble de la leçon" class="document-overview" id="sommaire">
+<div class="overview-panel">
+<h2 class="overview-title">Table des matières</h2>
+<nav aria-label="Table des matières de la leçon" class="toc-nav">
+<ul class="toc-list">
+<li class="toc-item toc-level-1"><a class="toc-link" href="#partie-1">Comprendre l’idée d’une condition</a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#partie-2">Expressions, comparaisons et booléens</a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#partie-3">Attention : affectation et comparaison</a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#partie-4">Conditions composées</a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#partie-5">Structure conditionnelle réduite</a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#partie-6">Structure conditionnelle avec alternative</a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#partie-7">Structure conditionnelle généralisée</a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#partie-8">Structure conditionnelle à choix multiple</a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#partie-9">Erreurs fréquentes à éviter</a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#partie-10">Méthode pour analyser une condition</a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#partie-11">Mini synthèse</a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#partie-12">À retenir absolument</a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#partie-13">Exercices rapides de compréhension</a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#qcm-final">QCM final de validation</a></li>
+</ul>
+</nav>
+</div>
+<div class="overview-panel">
+<h2 class="overview-title">Objectifs de la leçon</h2>
+<ul class="goal-list">
+<li>Expliquer le rôle des structures conditionnelles dans la logique d’un programme.</li><li>Reconnaître une condition simple et une condition composée.</li><li>Distinguer l’affectation de la comparaison.</li><li>Écrire une structure <strong>if</strong> en Python.</li><li>Utiliser <strong>if / else</strong> pour gérer deux cas.</li><li>Utiliser <strong>if / elif / else</strong> pour gérer plusieurs cas.</li><li>Comprendre le principe du choix multiple.</li><li>Traduire un pseudo-code en code Python.</li><li>Éviter les erreurs fréquentes liées aux conditions.</li>
+</ul>
+</div>
+</section>
+</header>
+<section class="part" id="partie-1">
+<div class="part-header"><h2 class="part-title">Comprendre l’idée d’une condition</h2></div>
+<div class="part-body"><section class="section-block line-section"><h3 class="section-title">Qu’est-ce qu’une condition ?</h3><div class="section-body"><p>Une condition est une expression qui permet de répondre à une question par <strong>True</strong> ou <strong>False</strong>. En d’autres mots, une condition sert à tester si quelque chose est vrai ou faux.</p><section class="syntax-card"><h4>Exemples de conditions</h4><pre data-help-role="Ce bloc regroupe une écriture utile à mémoriser pour comprendre qu’est-ce qu’une condition ? et relire rapidement exemples de conditions." data-help-title="Syntaxe à retenir">x &gt; 0
+note &gt;= 60
+age == 18
+nom != "Ali"</pre></section><div class="callout spaced-block lesson-callout"><strong>Idée clé :</strong> une condition ne produit pas une phrase complète ; elle produit une réponse logique : vrai ou faux.</div></div></section><section class="section-block line-section"><h3 class="section-title">Pourquoi utilise-t-on des conditions ?</h3><div class="section-body"><p>On utilise les conditions lorsqu’on veut que le programme fasse un choix. Au lieu d’exécuter toujours la même suite d’instructions, le programme adapte son comportement à la situation rencontrée.</p><ul><li>Si la note est suffisante, afficher « réussite » ; sinon, afficher « échec ».</li><li>Si le mot de passe est correct, autoriser l’accès ; sinon, refuser l’accès.</li><li>Afficher un message différent selon la valeur entrée par l’utilisateur.</li></ul><div class="callout spaced-block final-callout"><strong>À retenir :</strong> une structure conditionnelle permet de contrôler le flux d’exécution d’un programme.</div></div></section></div>
+</section><section class="part" id="partie-2">
+<div class="part-header"><h2 class="part-title">Expressions, comparaisons et booléens</h2></div>
+<div class="part-body"><section class="section-block line-section"><h3 class="section-title">Expression arithmétique et expression booléenne</h3><div class="section-body"><p>Une <strong>expression arithmétique</strong> produit une valeur numérique. Une <strong>expression booléenne</strong> produit quant à elle <strong>True</strong> ou <strong>False</strong>. Cette distinction est importante, car une structure conditionnelle teste toujours une expression booléenne.</p><div class="duo-grid"><section class="syntax-card"><h4>Expression arithmétique</h4><pre data-help-role="Ce bloc regroupe une écriture utile à mémoriser pour comprendre expression arithmétique et expression booléenne et relire rapidement expression arithmétique." data-help-title="Syntaxe à retenir">5 + 2
+x * 3
+a - b</pre></section><section class="syntax-card"><h4>Expression booléenne</h4><pre data-help-role="Ce bloc regroupe une écriture utile à mémoriser pour comprendre expression arithmétique et expression booléenne et relire rapidement expression booléenne." data-help-title="Syntaxe à retenir">x &lt; 10
+note &gt;= 60
+age == 18</pre></section></div></div></section><section class="section-block line-section"><h3 class="section-title">Les opérateurs de comparaison</h3><div class="section-body"><p>Les opérateurs de comparaison servent à fabriquer des tests. Ils permettent de comparer deux valeurs pour savoir si une condition est vraie ou fausse.</p><div class="table-wrap spaced-block"><table><thead><tr><th>Opérateur</th><th>Signification</th></tr></thead><tbody><tr><td>&lt;</td><td>inférieur à</td></tr><tr><td>&lt;=</td><td>inférieur ou égal à</td></tr><tr><td>&gt;</td><td>supérieur à</td></tr><tr><td>&gt;=</td><td>supérieur ou égal à</td></tr><tr><td>==</td><td>égal à</td></tr><tr><td>!=</td><td>différent de</td></tr></tbody></table></div><ul><li><strong>x &lt; 5</strong> → est-ce que x est plus petit que 5 ?</li><li><strong>note &gt;= 60</strong> → est-ce que la note est au moins 60 ?</li><li><strong>mot != "admin"</strong> → est-ce que le mot est différent de admin ?</li></ul></div></section></div>
+</section><section class="part" id="partie-3">
+<div class="part-header"><h2 class="part-title">Attention : affectation et comparaison</h2></div>
+<div class="part-body"><section class="section-block line-section"><h3 class="section-title">Affectation</h3><div class="section-body"><p>L’affectation sert à donner une valeur à une variable.</p><section class="syntax-card"><h4>Exemple</h4><pre data-help-role="Ce bloc regroupe une écriture utile à mémoriser pour comprendre affectation et relire rapidement exemple." data-help-title="Syntaxe à retenir">x = 3</pre><p>Ici, on place la valeur 3 dans la variable <strong>x</strong>.</p></section></div></section><section class="section-block line-section"><h3 class="section-title">Comparaison</h3><div class="section-body"><p>La comparaison sert à vérifier si deux valeurs sont égales.</p><section class="syntax-card"><h4>Exemple</h4><pre data-help-role="Ce bloc regroupe une écriture utile à mémoriser pour comprendre comparaison et relire rapidement exemple." data-help-title="Syntaxe à retenir">x == 3</pre><p>Ici, on demande : « est-ce que x vaut 3 ? »</p></section><div class="callout spaced-block warning-callout"><strong>À retenir absolument :</strong> <strong>=</strong> sert à affecter une valeur, alors que <strong>==</strong> sert à comparer deux valeurs.</div></div></section><section class="section-block line-section"><h3 class="section-title">Exemple d’erreur classique</h3><div class="section-body"><p>C’est une erreur fréquente en programmation. En Python, on ne peut pas écrire une affectation à la place d’un test dans un <strong>if</strong>.</p><div class="duo-grid"><section class="snippet-embed"><section class="code-window theme-python bad-example" data-help-role="Ce bloc présente volontairement une écriture erronée dans condition_incorrecte.py afin de faire repérer l’erreur et de la comparer ensuite avec la version correcte." data-help-title="Exemple incorrect à analyser">
+<div class="window-header">
+<div class="window-controls"><span></span><span></span><span></span></div>
+<div class="window-title">condition_incorrecte.py</div>
+</div>
+<div class="code-body">
+<div class="terminal-intro">Version incorrecte</div>
+<div class="code-content">
+<div class="line" data-help-role="Cette ligne illustre une erreur : elle utilise = dans la condition au lieu de ==. On tente donc une affectation là où Python attend une vraie comparaison." data-help-title="Erreur d’affectation dans le test"><span class="line-no">1</span><span class="line-text"><span class="py-keyword">if</span> <span class="py-default">x</span> <span class="py-operator">=</span> <span class="py-number">3</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne montre le traitement qui aurait été exécuté si la condition avait été écrite correctement. Elle sert ici seulement à illustrer le bloc indenté de l’exemple incorrect." data-help-title="Affichage associé au test erroné"><span class="line-no">2</span><span class="line-text indent-1"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"oui"</span><span class="py-operator">)</span></span></div>
+</div>
+</div>
+</section></section><section class="snippet-embed"><section class="code-window theme-python good-example" data-help-role="Ce bloc montre la forme correcte à retenir dans condition_correcte.py. Les aides expliquent pourquoi chaque ligne fonctionne dans ce cas précis." data-help-title="Exemple correct de référence">
+<div class="window-header">
+<div class="window-controls"><span></span><span></span><span></span></div>
+<div class="window-title">condition_correcte.py</div>
+</div>
+<div class="code-body">
+<div class="terminal-intro">Version correcte</div>
+<div class="code-content">
+<div class="line" data-help-role="Cette ligne teste si la variable x vaut exactement 3 avant d’autoriser l’affichage du message situé dans le bloc indenté." data-help-title="Comparaison d’égalité"><span class="line-no">1</span><span class="line-text"><span class="py-keyword">if</span> <span class="py-default">x</span> <span class="py-operator">==</span> <span class="py-number">3</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne affiche un simple message de confirmation lorsque la condition précédente est vraie." data-help-title="Affichage de confirmation"><span class="line-no">2</span><span class="line-text indent-1"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"oui"</span><span class="py-operator">)</span></span></div>
+</div>
+</div>
+</section></section></div></div></section></div>
+</section><section class="part" id="partie-4">
+<div class="part-header"><h2 class="part-title">Conditions composées</h2></div>
+<div class="part-body"><section class="section-block line-section"><h3 class="section-title">Les opérateurs logiques</h3><div class="section-body"><p>Parfois, une seule condition ne suffit pas. On doit alors combiner plusieurs tests. En Python, on utilise principalement <strong>and</strong>, <strong>or</strong> et <strong>not</strong>.</p><ul><li><strong>and</strong> : et</li><li><strong>or</strong> : ou</li><li><strong>not</strong> : non</li></ul></div></section><section class="section-block line-section"><h3 class="section-title">Exemples de conditions composées</h3><div class="section-body"><section class="syntax-card"><h4>Exemples</h4><pre data-help-role="Ce bloc regroupe une écriture utile à mémoriser pour comprendre exemples de conditions composées et relire rapidement exemples." data-help-title="Syntaxe à retenir">x &gt; 0 and x &lt;= 10
+x &lt; 0 or x &gt; 100
+not x == 0
+x &gt; 0 and x &lt;= 1
+x != 0</pre></section><ul><li><strong>x &gt; 0 and x &lt;= 10</strong> signifie que x est strictement supérieur à 0 et inférieur ou égal à 10.</li><li><strong>x &lt; 0 or x &gt; 100</strong> signifie que x est inférieur à 0 ou supérieur à 100.</li><li><strong>not x == 0</strong> signifie que x n’est pas égal à 0.</li><li><strong>x &gt; 0 and x &lt;= 1</strong> signifie que x appartient à l’intervalle ]0, 1].</li><li><strong>x != 0</strong> signifie que x est différent de zéro.</li></ul><div class="callout spaced-block lesson-callout"><strong>Conseil pédagogique :</strong> quand une condition devient longue, il faut la lire lentement en français avant de la coder.</div></div></section></div>
+</section><section class="part" id="partie-5">
+<div class="part-header"><h2 class="part-title">Structure conditionnelle réduite</h2></div>
+<div class="part-body"><section class="section-block line-section"><h3 class="section-title">Définition</h3><div class="section-body"><p>La structure conditionnelle réduite permet d’exécuter un traitement seulement si une condition est vraie. Si la condition est fausse, le programme ne fait rien dans ce bloc.</p></div></section><section class="section-block line-section"><h3 class="section-title">Forme en algorithmique et en Python</h3><div class="section-body"><p>Cette structure correspond à la forme la plus simple d’un test conditionnel.</p><div class="duo-grid"><section class="algorithm-embed"><section class="code-window theme-algorithm" data-help-role="Ce bloc montre la logique de algorithme.algo avant sa traduction en code. Chaque ligne explique le rôle précis de la structure dans la démonstration." data-help-title="Bloc algorithmique">
+<div class="window-header">
+<div class="window-controls"><span></span><span></span><span></span></div>
+<div class="window-title">algorithme.algo</div>
+</div>
+<div class="code-body">
+<div class="terminal-intro">Pseudo-code — logique algorithmique</div>
+<div class="code-content algorithm-content">
+<div class="line" data-help-role="Cette ligne vérifie la condition à analyser avant d’entrer dans le traitement représenté juste en dessous." data-help-title="Test de départ"><span class="line-no">1</span><span class="line-text algo-text"><span class="algo-keyword">Si</span> condition <span class="algo-keyword">Alors</span></span></div><div class="line" data-help-role="Cette ligne symbolise l’action réalisée seulement si la condition précédente est satisfaite." data-help-title="Traitement à exécuter"><span class="line-no">2</span><span class="line-text algo-text indent-1">traitement</span></div><div class="line" data-help-role="Cette ligne ferme explicitement la structure conditionnelle afin de montrer où se termine le bloc logique." data-help-title="Fin de structure"><span class="line-no">3</span><span class="line-text algo-text"><span class="algo-keyword"><span class="algo-keyword">Fin</span> <span class="algo-keyword">Si</span></span></span></div>
+</div>
+</div>
+</section></section><section class="snippet-embed"><section class="code-window theme-python" data-help-role="Fichier Python — structure générale. Ce bloc présente un exemple concret tiré de la leçon dans structure_reduite.py. Les aides décrivent le rôle exact de chaque ligne dans ce contexte précis." data-help-title="Bloc Python">
+<div class="window-header">
+<div class="window-controls"><span></span><span></span><span></span></div>
+<div class="window-title">structure_reduite.py</div>
+</div>
+<div class="code-body">
+<div class="terminal-intro">Fichier Python — structure générale</div>
+<div class="code-content">
+<div class="line" data-help-role="Cette ligne montre la forme minimale d’un if en Python : on teste une condition, puis on exécute le bloc indenté uniquement si elle est vraie." data-help-title="Condition générale"><span class="line-no">1</span><span class="line-text"><span class="py-keyword">if</span> <span class="py-default">condition</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne participe à la logique de forme en algorithmique et en python et prépare le déroulement de l’exemple montré dans structure_reduite.py." data-help-title="Instruction Python"><span class="line-no">2</span><span class="line-text indent-1"><span class="py-default">traitement</span></span></div>
+</div>
+</div>
+</section></section></div><ul><li><strong>if</strong> signifie si ;</li><li>le caractère <strong>:</strong> annonce le début du bloc ;</li><li>le traitement doit être <strong>indenté</strong>.</li></ul></div></section><section class="section-block line-section"><h3 class="section-title">Exemple : tester la divisibilité par 11</h3><div class="section-body"><p>Dans cet exemple, on exécute un traitement seulement si le nombre saisi est divisible par 11.</p><section class="snippet-embed"><section class="code-window theme-python" data-help-role="Fichier Python — exemple. Ce bloc présente un exemple concret tiré de la leçon dans divisible_par_11.py. Les aides décrivent le rôle exact de chaque ligne dans ce contexte précis." data-help-title="Bloc Python">
+<div class="window-header">
+<div class="window-controls"><span></span><span></span><span></span></div>
+<div class="window-title">divisible_par_11.py</div>
+</div>
+<div class="code-body">
+<div class="terminal-intro">Fichier Python — exemple</div>
+<div class="code-content">
+<div class="line" data-help-role="Cette ligne demande à l’utilisateur de saisir un entier, transforme la réponse en nombre avec int(), puis la range dans x pour pouvoir tester ensuite sa divisibilité." data-help-title="Saisie convertie et stockée"><span class="line-no">1</span><span class="line-text"><span class="py-default">x</span> <span class="py-operator">=</span> <span class="py-builtin">int</span><span class="py-operator">(</span><span class="py-builtin">input</span><span class="py-operator">(</span><span class="py-string">"Entrez un entier : "</span><span class="py-operator">)</span><span class="py-operator">)</span></span></div><div class="line" data-help-role="Cette condition vérifie si le reste de la division de x par 11 est nul afin de savoir si le nombre saisi est divisible par 11." data-help-title="Test de divisibilité par 11"><span class="line-no">2</span><span class="line-text"><span class="py-keyword">if</span> <span class="py-default">x</span> <span class="py-operator">%</span> <span class="py-number">11</span> <span class="py-operator">==</span> <span class="py-number">0</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne affiche un message confirmant que le nombre contenu dans x est divisible par 11 lorsque le test précédent a réussi." data-help-title="Affichage de la divisibilité"><span class="line-no">3</span><span class="line-text indent-1"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">f"{x} est divisible par 11"</span><span class="py-operator">)</span></span></div>
+</div>
+</div>
+</section></section><div class="resultblock">
+<div aria-label="Exemple de résultat attendu" class="pcframe screen-m">
+<div class="pcinner">
+<pre class="resultpre" data-help-role="Ce bloc montre la sortie visible que l’on doit obtenir quand le code de l’exemple précédent fonctionne correctement." data-help-title="Exemple de résultat attendu">Exemple possible avec x = 22
+22 est divisible par 11</pre>
+</div>
+</div>
+</div><ul><li><strong>input()</strong> lit la saisie clavier ;</li><li><strong>int()</strong> transforme la saisie en entier ;</li><li><strong>x % 11</strong> donne le reste de la division de x par 11 ;</li><li>si ce reste vaut 0, alors x est divisible par 11.</li></ul></div></section><section class="section-block line-section"><h3 class="section-title">Autre exemple simple</h3><div class="section-body"><section class="snippet-embed"><section class="code-window theme-python" data-help-role="Fichier Python — exemple simple. Ce bloc présente un exemple concret tiré de la leçon dans majeur.py. Les aides décrivent le rôle exact de chaque ligne dans ce contexte précis." data-help-title="Bloc Python">
+<div class="window-header">
+<div class="window-controls"><span></span><span></span><span></span></div>
+<div class="window-title">majeur.py</div>
+</div>
+<div class="code-body">
+<div class="terminal-intro">Fichier Python — exemple simple</div>
+<div class="code-content">
+<div class="line" data-help-role="Cette ligne place 20 dans la variable age afin de disposer d’un exemple concret avant le test de majorité." data-help-title="Valeur d’exemple pour l’âge"><span class="line-no">1</span><span class="line-text"><span class="py-default">age</span> <span class="py-operator">=</span> <span class="py-number">20</span></span></div><div class="line" data-help-role="Cette condition compare l’âge stocké dans age à 18 pour décider si l’exemple doit afficher que la personne est majeure." data-help-title="Test de majorité"><span class="line-no">2</span><span class="line-text"><span class="py-keyword">if</span> <span class="py-default">age</span> <span class="py-operator">&gt;=</span> <span class="py-number">18</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne affiche le message de majorité uniquement lorsque l’âge testé satisfait la condition age &gt;= 18." data-help-title="Affichage du statut majeur"><span class="line-no">3</span><span class="line-text indent-1"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"Vous êtes majeur."</span><span class="py-operator">)</span></span></div>
+</div>
+</div>
+</section></section></div></section></div>
+</section><section class="part" id="partie-6">
+<div class="part-header"><h2 class="part-title">Structure conditionnelle avec alternative</h2></div>
+<div class="part-body"><section class="section-block line-section"><h3 class="section-title">Définition</h3><div class="section-body"><p>La structure conditionnelle avec alternative permet de choisir entre deux traitements. Si la condition est vraie, on exécute le premier bloc ; sinon, on exécute le second.</p></div></section><section class="section-block line-section"><h3 class="section-title">Forme en algorithmique et en Python</h3><div class="section-body"><div class="duo-grid"><section class="algorithm-embed"><section class="code-window theme-algorithm" data-help-role="Ce bloc montre la logique de algorithme.algo avant sa traduction en code. Chaque ligne explique le rôle précis de la structure dans la démonstration." data-help-title="Bloc algorithmique">
+<div class="window-header">
+<div class="window-controls"><span></span><span></span><span></span></div>
+<div class="window-title">algorithme.algo</div>
+</div>
+<div class="code-body">
+<div class="terminal-intro">Pseudo-code — logique algorithmique</div>
+<div class="code-content algorithm-content">
+<div class="line" data-help-role="Cette ligne vérifie la condition à analyser avant d’entrer dans le traitement représenté juste en dessous." data-help-title="Test de départ"><span class="line-no">1</span><span class="line-text algo-text"><span class="algo-keyword">Si</span> condition <span class="algo-keyword">Alors</span></span></div><div class="line" data-help-role="Cette ligne représente l’action exécutée quand la première condition de l’exemple est vraie." data-help-title="Traitement du premier cas"><span class="line-no">2</span><span class="line-text algo-text indent-1">traitement <span class="algo-number">1</span></span></div><div class="line" data-help-role="Cette ligne ouvre le bloc de secours exécuté quand aucune des conditions précédentes n’est vraie dans cet exemple." data-help-title="Cas contraire"><span class="line-no">3</span><span class="line-text algo-text"><span class="algo-keyword">Sinon</span></span></div><div class="line" data-help-role="Cette ligne représente l’action exécutée dans le bloc de secours quand le premier test échoue." data-help-title="Traitement du cas contraire"><span class="line-no">4</span><span class="line-text algo-text indent-1">traitement <span class="algo-number">2</span></span></div><div class="line" data-help-role="Cette ligne ferme explicitement la structure conditionnelle afin de montrer où se termine le bloc logique." data-help-title="Fin de structure"><span class="line-no">5</span><span class="line-text algo-text"><span class="algo-keyword"><span class="algo-keyword">Fin</span> <span class="algo-keyword">Si</span></span></span></div>
+</div>
+</div>
+</section></section><section class="snippet-embed"><section class="code-window theme-python" data-help-role="Fichier Python — structure générale. Ce bloc présente un exemple concret tiré de la leçon dans if_else.py. Les aides décrivent le rôle exact de chaque ligne dans ce contexte précis." data-help-title="Bloc Python">
+<div class="window-header">
+<div class="window-controls"><span></span><span></span><span></span></div>
+<div class="window-title">if_else.py</div>
+</div>
+<div class="code-body">
+<div class="terminal-intro">Fichier Python — structure générale</div>
+<div class="code-content">
+<div class="line" data-help-role="Cette ligne montre la forme minimale d’un if en Python : on teste une condition, puis on exécute le bloc indenté uniquement si elle est vraie." data-help-title="Condition générale"><span class="line-no">1</span><span class="line-text"><span class="py-keyword">if</span> <span class="py-default">condition</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne participe à la logique de forme en algorithmique et en python et prépare le déroulement de l’exemple montré dans if_else.py." data-help-title="Instruction Python"><span class="line-no">2</span><span class="line-text indent-1"><span class="py-default">traitement_1</span></span></div><div class="line" data-help-role="Cette branche est exécutée quand aucun des tests précédents de cet exemple n’a été validé." data-help-title="Cas contraire"><span class="line-no">3</span><span class="line-text"><span class="py-keyword">else</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne participe à la logique de forme en algorithmique et en python et prépare le déroulement de l’exemple montré dans if_else.py." data-help-title="Instruction Python"><span class="line-no">4</span><span class="line-text indent-1"><span class="py-default">traitement_2</span></span></div>
+</div>
+</div>
+</section></section></div></div></section><section class="section-block line-section"><h3 class="section-title">Exemple pair / impair</h3><div class="section-body"><p>Cet exemple montre comment choisir entre deux cas exclusifs : un nombre pair ou un nombre impair.</p><section class="snippet-embed"><section class="code-window theme-python" data-help-role="Fichier Python — exemple. Ce bloc présente un exemple concret tiré de la leçon dans pair_impair.py. Les aides décrivent le rôle exact de chaque ligne dans ce contexte précis." data-help-title="Bloc Python">
+<div class="window-header">
+<div class="window-controls"><span></span><span></span><span></span></div>
+<div class="window-title">pair_impair.py</div>
+</div>
+<div class="code-body">
+<div class="terminal-intro">Fichier Python — exemple</div>
+<div class="code-content">
+<div class="line" data-help-role="Cette ligne lit un entier fourni par l’utilisateur, le convertit en nombre puis le stocke dans n afin de tester ensuite s’il est pair ou impair." data-help-title="Saisie de l’entier à analyser"><span class="line-no">1</span><span class="line-text"><span class="py-default">n</span> <span class="py-operator">=</span> <span class="py-builtin">int</span><span class="py-operator">(</span><span class="py-builtin">input</span><span class="py-operator">(</span><span class="py-string">"Entrez un entier : "</span><span class="py-operator">)</span><span class="py-operator">)</span></span></div><div class="line" data-help-role="Cette condition vérifie si n est divisible par 2 sans reste afin de déterminer si le nombre saisi est pair." data-help-title="Test de parité"><span class="line-no">2</span><span class="line-text"><span class="py-keyword">if</span> <span class="py-default">n</span> <span class="py-operator">%</span> <span class="py-number">2</span> <span class="py-operator">==</span> <span class="py-number">0</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne annonce que le nombre est pair quand le test n % 2 == 0 a réussi." data-help-title="Affichage du cas pair"><span class="line-no">3</span><span class="line-text indent-1"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"Nombre pair"</span><span class="py-operator">)</span></span></div><div class="line" data-help-role="Cette branche s’exécute si n n’est pas divisible par 2 ; elle permet donc d’afficher que le nombre est impair." data-help-title="Cas impair"><span class="line-no">4</span><span class="line-text"><span class="py-keyword">else</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne annonce que le nombre est impair lorsque le programme passe dans la branche else." data-help-title="Affichage du cas impair"><span class="line-no">5</span><span class="line-text indent-1"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"Nombre impair"</span><span class="py-operator">)</span></span></div>
+</div>
+</div>
+</section></section><div class="resultblock">
+<div aria-label="Exemple de résultat attendu" class="pcframe screen-m">
+<div class="pcinner">
+<pre class="resultpre" data-help-role="Ce bloc montre la sortie visible que l’on doit obtenir quand le code de l’exemple précédent fonctionne correctement." data-help-title="Exemple de résultat attendu">Exemple possible avec n = 7
+Nombre impair</pre>
+</div>
+</div>
+</div><ul><li>si le reste de la division par 2 vaut 0, le nombre est pair ;</li><li>sinon, il est impair.</li></ul></div></section><section class="section-block line-section"><h3 class="section-title">Deuxième exemple</h3><div class="section-body"><section class="snippet-embed"><section class="code-window theme-python" data-help-role="Fichier Python — exemple. Ce bloc présente un exemple concret tiré de la leçon dans reussite_echec.py. Les aides décrivent le rôle exact de chaque ligne dans ce contexte précis." data-help-title="Bloc Python">
+<div class="window-header">
+<div class="window-controls"><span></span><span></span><span></span></div>
+<div class="window-title">reussite_echec.py</div>
+</div>
+<div class="code-body">
+<div class="terminal-intro">Fichier Python — exemple</div>
+<div class="code-content">
+<div class="line" data-help-role="Cette ligne fixe une note de 72 pour illustrer ensuite la décision entre réussite et échec." data-help-title="Note d’exemple"><span class="line-no">1</span><span class="line-text"><span class="py-default">note</span> <span class="py-operator">=</span> <span class="py-number">72</span></span></div><div class="line" data-help-role="Cette condition vérifie si la note atteint le seuil minimal de réussite pour décider entre les messages Réussite et Échec." data-help-title="Test de réussite"><span class="line-no">2</span><span class="line-text"><span class="py-keyword">if</span> <span class="py-default">note</span> <span class="py-operator">&gt;=</span> <span class="py-number">60</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne affiche Réussite lorsque la note atteint ou dépasse le seuil demandé dans l’exemple." data-help-title="Affichage de la réussite"><span class="line-no">3</span><span class="line-text indent-1"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"Réussite"</span><span class="py-operator">)</span></span></div><div class="line" data-help-role="Cette branche est exécutée quand aucun des tests précédents de cet exemple n’a été validé." data-help-title="Cas contraire"><span class="line-no">4</span><span class="line-text"><span class="py-keyword">else</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne affiche Échec lorsque la note ne satisfait pas la condition de réussite." data-help-title="Affichage de l’échec"><span class="line-no">5</span><span class="line-text indent-1"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"Échec"</span><span class="py-operator">)</span></span></div>
+</div>
+</div>
+</section></section><div class="callout spaced-block final-callout"><strong>Point important :</strong> dans une structure <strong>if / else</strong>, un seul bloc est exécuté.</div></div></section></div>
+</section><section class="part" id="partie-7">
+<div class="part-header"><h2 class="part-title">Structure conditionnelle généralisée</h2></div>
+<div class="part-body"><section class="section-block line-section"><h3 class="section-title">Définition</h3><div class="section-body"><p>La structure conditionnelle généralisée permet de gérer plusieurs cas. Le programme teste les conditions dans l’ordre. Dès qu’une condition est vraie, il exécute le bloc correspondant et quitte la structure.</p></div></section><section class="section-block line-section"><h3 class="section-title">Forme en algorithmique et en Python</h3><div class="section-body"><div class="duo-grid"><section class="algorithm-embed"><section class="code-window theme-algorithm" data-help-role="Ce bloc montre la logique de algorithme.algo avant sa traduction en code. Chaque ligne explique le rôle précis de la structure dans la démonstration." data-help-title="Bloc algorithmique">
+<div class="window-header">
+<div class="window-controls"><span></span><span></span><span></span></div>
+<div class="window-title">algorithme.algo</div>
+</div>
+<div class="code-body">
+<div class="terminal-intro">Pseudo-code — logique algorithmique</div>
+<div class="code-content algorithm-content">
+<div class="line" data-help-role="Cette ligne lance le premier test de la structure généralisée. Si la première condition est vraie, le programme exécutera immédiatement le traitement associé." data-help-title="Premier cas à tester"><span class="line-no">1</span><span class="line-text algo-text"><span class="algo-keyword">Si</span> condition <span class="algo-number">1</span> <span class="algo-keyword">Alors</span></span></div><div class="line" data-help-role="Cette ligne représente l’action exécutée quand la première condition de l’exemple est vraie." data-help-title="Traitement du premier cas"><span class="line-no">2</span><span class="line-text algo-text indent-1">traitement <span class="algo-number">1</span></span></div><div class="line" data-help-role="Cette ligne ajoute un deuxième test, utilisé seulement si le premier cas n’a pas été validé." data-help-title="Deuxième cas possible"><span class="line-no">3</span><span class="line-text algo-text"><span class="algo-keyword"><span class="algo-keyword">Sinon</span> <span class="algo-keyword">Si</span></span> condition <span class="algo-number">2</span> <span class="algo-keyword">Alors</span></span></div><div class="line" data-help-role="Cette ligne représente l’action exécutée dans le bloc de secours quand le premier test échoue." data-help-title="Traitement du cas contraire"><span class="line-no">4</span><span class="line-text algo-text indent-1">traitement <span class="algo-number">2</span></span></div><div class="line" data-help-role="Cette ligne ajoute un autre test dans la même chaîne de décision lorsque les cas précédents ne conviennent pas." data-help-title="Troisième cas possible"><span class="line-no">5</span><span class="line-text algo-text"><span class="algo-keyword"><span class="algo-keyword">Sinon</span> <span class="algo-keyword">Si</span></span> condition <span class="algo-number">3</span> <span class="algo-keyword">Alors</span></span></div><div class="line" data-help-role="Cette ligne participe à la logique présentée dans forme en algorithmique et en python et aide à comprendre l’enchaînement de la structure." data-help-title="Étape algorithmique"><span class="line-no">6</span><span class="line-text algo-text indent-1">traitement <span class="algo-number">3</span></span></div><div class="line" data-help-role="Cette ligne ouvre le bloc de secours exécuté quand aucune des conditions précédentes n’est vraie dans cet exemple." data-help-title="Cas contraire"><span class="line-no">7</span><span class="line-text algo-text"><span class="algo-keyword">Sinon</span></span></div><div class="line" data-help-role="Cette ligne participe à la logique présentée dans forme en algorithmique et en python et aide à comprendre l’enchaînement de la structure." data-help-title="Étape algorithmique"><span class="line-no">8</span><span class="line-text algo-text indent-1">traitement final</span></div><div class="line" data-help-role="Cette ligne ferme explicitement la structure conditionnelle afin de montrer où se termine le bloc logique." data-help-title="Fin de structure"><span class="line-no">9</span><span class="line-text algo-text"><span class="algo-keyword"><span class="algo-keyword">Fin</span> <span class="algo-keyword">Si</span></span></span></div>
+</div>
+</div>
+</section></section><section class="snippet-embed"><section class="code-window theme-python" data-help-role="Fichier Python — structure générale. Ce bloc présente un exemple concret tiré de la leçon dans if_elif_else.py. Les aides décrivent le rôle exact de chaque ligne dans ce contexte précis." data-help-title="Bloc Python">
+<div class="window-header">
+<div class="window-controls"><span></span><span></span><span></span></div>
+<div class="window-title">if_elif_else.py</div>
+</div>
+<div class="code-body">
+<div class="terminal-intro">Fichier Python — structure générale</div>
+<div class="code-content">
+<div class="line" data-help-role="Cette ligne montre la forme minimale d’un if en Python : on teste une condition, puis on exécute le bloc indenté uniquement si elle est vraie." data-help-title="Condition générale"><span class="line-no">1</span><span class="line-text"><span class="py-keyword">if</span> <span class="py-default">condition1</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne participe à la logique de forme en algorithmique et en python et prépare le déroulement de l’exemple montré dans if_elif_else.py." data-help-title="Instruction Python"><span class="line-no">2</span><span class="line-text indent-1"><span class="py-default">traitement1</span></span></div><div class="line" data-help-role="Cette ligne ajoute un autre cas à vérifier seulement si le premier test n’a pas été validé." data-help-title="Deuxième test possible"><span class="line-no">3</span><span class="line-text"><span class="py-keyword">elif</span> <span class="py-default">condition2</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne participe à la logique de forme en algorithmique et en python et prépare le déroulement de l’exemple montré dans if_elif_else.py." data-help-title="Instruction Python"><span class="line-no">4</span><span class="line-text indent-1"><span class="py-default">traitement2</span></span></div><div class="line" data-help-role="Cette ligne propose un nouveau cas dans la chaîne conditionnelle si les tests précédents étaient faux." data-help-title="Troisième test possible"><span class="line-no">5</span><span class="line-text"><span class="py-keyword">elif</span> <span class="py-default">condition3</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne participe à la logique de forme en algorithmique et en python et prépare le déroulement de l’exemple montré dans if_elif_else.py." data-help-title="Instruction Python"><span class="line-no">6</span><span class="line-text indent-1"><span class="py-default">traitement3</span></span></div><div class="line" data-help-role="Cette branche finale traite le dernier cas restant lorsque toutes les conditions précédentes sont fausses." data-help-title="Cas par défaut"><span class="line-no">7</span><span class="line-text"><span class="py-keyword">else</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne participe à la logique de forme en algorithmique et en python et prépare le déroulement de l’exemple montré dans if_elif_else.py." data-help-title="Instruction Python"><span class="line-no">8</span><span class="line-text indent-1"><span class="py-default">traitement_final</span></span></div>
+</div>
+</div>
+</section></section></div></div></section><section class="section-block line-section"><h3 class="section-title">Exemple : signe d’un nombre</h3><div class="section-body"><section class="snippet-embed"><section class="code-window theme-python" data-help-role="Fichier Python — exemple. Ce bloc présente un exemple concret tiré de la leçon dans signe_nombre.py. Les aides décrivent le rôle exact de chaque ligne dans ce contexte précis." data-help-title="Bloc Python">
+<div class="window-header">
+<div class="window-controls"><span></span><span></span><span></span></div>
+<div class="window-title">signe_nombre.py</div>
+</div>
+<div class="code-body">
+<div class="terminal-intro">Fichier Python — exemple</div>
+<div class="code-content">
+<div class="line" data-help-role="Cette ligne demande à l’utilisateur de saisir un entier, transforme la réponse en nombre avec int(), puis la range dans x pour pouvoir tester ensuite sa divisibilité." data-help-title="Saisie convertie et stockée"><span class="line-no">1</span><span class="line-text"><span class="py-default">x</span> <span class="py-operator">=</span> <span class="py-builtin">int</span><span class="py-operator">(</span><span class="py-builtin">input</span><span class="py-operator">(</span><span class="py-string">"Entrez un entier : "</span><span class="py-operator">)</span><span class="py-operator">)</span></span></div><div class="line" data-help-role="Cette condition vérifie si x est négatif afin de classer correctement la valeur ou de préparer le calcul de sa valeur absolue." data-help-title="Test de négativité"><span class="line-no">2</span><span class="line-text"><span class="py-keyword">if</span> <span class="py-default">x</span> <span class="py-operator">&lt;</span> <span class="py-number">0</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne affiche que la valeur est négative après validation du test x &lt; 0." data-help-title="Affichage du cas négatif"><span class="line-no">3</span><span class="line-text indent-1"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"négatif"</span><span class="py-operator">)</span></span></div><div class="line" data-help-role="Cette condition traite le cas particulier où x vaut exactement 0, seulement si le cas précédent n’a pas été retenu." data-help-title="Test du cas nul"><span class="line-no">4</span><span class="line-text"><span class="py-keyword">elif</span> <span class="py-default">x</span> <span class="py-operator">==</span> <span class="py-number">0</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne affiche que la valeur est nulle lorsque la condition x == 0 a été reconnue." data-help-title="Affichage du cas nul"><span class="line-no">5</span><span class="line-text indent-1"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"nul"</span><span class="py-operator">)</span></span></div><div class="line" data-help-role="Cette branche est exécutée quand aucun des tests précédents de cet exemple n’a été validé." data-help-title="Cas contraire"><span class="line-no">6</span><span class="line-text"><span class="py-keyword">else</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne affiche que la valeur est positive lorsque le programme arrive dans la branche correspondante." data-help-title="Affichage du cas positif"><span class="line-no">7</span><span class="line-text indent-1"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"positif"</span><span class="py-operator">)</span></span></div>
+</div>
+</div>
+</section></section><div class="resultblock">
+<div aria-label="Exemple de résultat attendu" class="pcframe screen-m">
+<div class="pcinner">
+<pre class="resultpre" data-help-role="Ce bloc montre la sortie visible que l’on doit obtenir quand le code de l’exemple précédent fonctionne correctement." data-help-title="Exemple de résultat attendu">Exemples possibles
+x = -3  -&gt; négatif
+x = 0   -&gt; nul
+x = 8   -&gt; positif</pre>
+</div>
+</div>
+</div></div></section><section class="section-block line-section"><h3 class="section-title">Exemple enrichi : valeur absolue</h3><div class="section-body"><section class="snippet-embed"><section class="code-window theme-python" data-help-role="Fichier Python — exemple enrichi. Ce bloc présente un exemple concret tiré de la leçon dans valeur_absolue.py. Les aides décrivent le rôle exact de chaque ligne dans ce contexte précis." data-help-title="Bloc Python">
+<div class="window-header">
+<div class="window-controls"><span></span><span></span><span></span></div>
+<div class="window-title">valeur_absolue.py</div>
+</div>
+<div class="code-body">
+<div class="terminal-intro">Fichier Python — exemple enrichi</div>
+<div class="code-content">
+<div class="line" data-help-role="Cette ligne demande à l’utilisateur de saisir un entier, transforme la réponse en nombre avec int(), puis la range dans x pour pouvoir tester ensuite sa divisibilité." data-help-title="Saisie convertie et stockée"><span class="line-no">1</span><span class="line-text"><span class="py-default">x</span> <span class="py-operator">=</span> <span class="py-builtin">int</span><span class="py-operator">(</span><span class="py-builtin">input</span><span class="py-operator">(</span><span class="py-string">"Entrez un entier : "</span><span class="py-operator">)</span><span class="py-operator">)</span></span></div><div class="line" data-help-role="Cette condition vérifie si x est négatif afin de classer correctement la valeur ou de préparer le calcul de sa valeur absolue." data-help-title="Test de négativité"><span class="line-no">2</span><span class="line-text"><span class="py-keyword">if</span> <span class="py-default">x</span> <span class="py-operator">&lt;</span> <span class="py-number">0</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne affiche que la valeur est négative après validation du test x &lt; 0." data-help-title="Affichage du cas négatif"><span class="line-no">3</span><span class="line-text indent-1"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"négatif"</span><span class="py-operator">)</span></span></div><div class="line" data-help-role="Cette ligne change le signe de x parce que le nombre est négatif dans ce cas, afin d’obtenir une valeur absolue positive à afficher ensuite." data-help-title="Construction de la valeur absolue"><span class="line-no">4</span><span class="line-text indent-1"><span class="py-default">abs_x</span> <span class="py-operator">=</span> <span class="py-operator">-</span><span class="py-default">x</span></span></div><div class="line" data-help-role="Cette condition traite le cas particulier où x vaut exactement 0, seulement si le cas précédent n’a pas été retenu." data-help-title="Test du cas nul"><span class="line-no">5</span><span class="line-text"><span class="py-keyword">elif</span> <span class="py-default">x</span> <span class="py-operator">==</span> <span class="py-number">0</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne affiche que la valeur est nulle lorsque la condition x == 0 a été reconnue." data-help-title="Affichage du cas nul"><span class="line-no">6</span><span class="line-text indent-1"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"nul"</span><span class="py-operator">)</span></span></div><div class="line" data-help-role="Cette ligne fixe abs_x à 0 pour traiter correctement le cas particulier où le nombre analysé vaut zéro." data-help-title="Valeur absolue du zéro"><span class="line-no">7</span><span class="line-text indent-1"><span class="py-default">abs_x</span> <span class="py-operator">=</span> <span class="py-number">0</span></span></div><div class="line" data-help-role="Cette branche s’exécute quand x n’est ni négatif ni nul ; dans cet exemple, elle sert donc à récupérer directement x comme valeur absolue." data-help-title="Cas positif"><span class="line-no">8</span><span class="line-text"><span class="py-keyword">else</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne affiche que la valeur est positive lorsque le programme arrive dans la branche correspondante." data-help-title="Affichage du cas positif"><span class="line-no">9</span><span class="line-text indent-1"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"positif"</span><span class="py-operator">)</span></span></div><div class="line" data-help-role="Cette ligne copie simplement x dans abs_x parce que, dans ce cas, le nombre est déjà positif." data-help-title="Conservation de la valeur positive"><span class="line-no">10</span><span class="line-text indent-1"><span class="py-default">abs_x</span> <span class="py-operator">=</span> <span class="py-default">x</span></span></div><div class="line" data-help-role="Cette ligne montre la valeur absolue calculée dans abs_x après que toutes les branches précédentes ont préparé la bonne valeur." data-help-title="Affichage final de la valeur absolue"><span class="line-no">11</span><span class="line-text"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"Valeur absolue ="</span><span class="py-operator">,</span> <span class="py-default">abs_x</span><span class="py-operator">)</span></span></div>
+</div>
+</div>
+</section></section><div class="resultblock">
+<div aria-label="Exemple de résultat attendu" class="pcframe screen-m">
+<div class="pcinner">
+<pre class="resultpre" data-help-role="Ce bloc montre la sortie visible que l’on doit obtenir quand le code de l’exemple précédent fonctionne correctement." data-help-title="Exemple de résultat attendu">Exemple possible avec x = -4
+négatif
+Valeur absolue = 4</pre>
+</div>
+</div>
+</div></div></section><section class="section-block line-section"><h3 class="section-title">Pourquoi l’ordre des conditions est très important</h3><div class="section-body"><p>Quand plusieurs conditions se ressemblent, leur ordre peut changer complètement le résultat.</p><div class="duo-grid"><section class="snippet-embed"><section class="code-window theme-python good-example" data-help-role="Ce bloc montre la forme correcte à retenir dans ordre_correct.py. Les aides expliquent pourquoi chaque ligne fonctionne dans ce cas précis." data-help-title="Exemple correct de référence">
+<div class="window-header">
+<div class="window-controls"><span></span><span></span><span></span></div>
+<div class="window-title">ordre_correct.py</div>
+</div>
+<div class="code-body">
+<div class="terminal-intro">Version correcte</div>
+<div class="code-content">
+<div class="line" data-help-role="Cette ligne fixe une note de 85 pour montrer ensuite comment la chaîne de conditions attribue une mention." data-help-title="Note de classement"><span class="line-no">1</span><span class="line-text"><span class="py-default">note</span> <span class="py-operator">=</span> <span class="py-number">85</span></span></div><div class="line" data-help-role="Cette ligne vérifie d’abord si la note atteint au moins 90 afin d’attribuer la mention A avant tous les autres cas." data-help-title="Test pour la note A"><span class="line-no">2</span><span class="line-text"><span class="py-keyword">if</span> <span class="py-default">note</span> <span class="py-operator">&gt;=</span> <span class="py-number">90</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne affiche la mention A lorsque la note se situe dans la meilleure tranche de l’exemple." data-help-title="Attribution de la mention A"><span class="line-no">3</span><span class="line-text indent-1"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"A"</span><span class="py-operator">)</span></span></div><div class="line" data-help-role="Cette ligne est évaluée seulement si la note n’a pas atteint 90. Elle vérifie ensuite si la note mérite la mention B." data-help-title="Test pour la note B"><span class="line-no">4</span><span class="line-text"><span class="py-keyword">elif</span> <span class="py-default">note</span> <span class="py-operator">&gt;=</span> <span class="py-number">80</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne affiche la mention B lorsque la note atteint le seuil correspondant sans atteindre la tranche A." data-help-title="Attribution de la mention B"><span class="line-no">5</span><span class="line-text indent-1"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"B"</span><span class="py-operator">)</span></span></div><div class="line" data-help-role="Cette ligne vérifie le seuil de 70 seulement si les seuils plus élevés n’ont pas été validés auparavant." data-help-title="Test pour la note C"><span class="line-no">6</span><span class="line-text"><span class="py-keyword">elif</span> <span class="py-default">note</span> <span class="py-operator">&gt;=</span> <span class="py-number">70</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne affiche la mention C lorsque la note atteint la tranche C dans l’exemple." data-help-title="Attribution de la mention C"><span class="line-no">7</span><span class="line-text indent-1"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"C"</span><span class="py-operator">)</span></span></div><div class="line" data-help-role="Cette branche est exécutée quand aucun des tests précédents de cet exemple n’a été validé." data-help-title="Cas contraire"><span class="line-no">8</span><span class="line-text"><span class="py-keyword">else</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne affiche la mention D dans le dernier cas restant quand les seuils précédents ne sont pas atteints." data-help-title="Attribution de la mention D"><span class="line-no">9</span><span class="line-text indent-1"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"D"</span><span class="py-operator">)</span></span></div>
+</div>
+</div>
+</section></section><section class="snippet-embed"><section class="code-window theme-python bad-example" data-help-role="Ce bloc présente volontairement une écriture erronée dans ordre_problematique.py afin de faire repérer l’erreur et de la comparer ensuite avec la version correcte." data-help-title="Exemple incorrect à analyser">
+<div class="window-header">
+<div class="window-controls"><span></span><span></span><span></span></div>
+<div class="window-title">ordre_problematique.py</div>
+</div>
+<div class="code-body">
+<div class="terminal-intro">Version problématique</div>
+<div class="code-content">
+<div class="line" data-help-role="Cette ligne fixe une note de 85 pour montrer ensuite comment la chaîne de conditions attribue une mention." data-help-title="Note de classement"><span class="line-no">1</span><span class="line-text"><span class="py-default">note</span> <span class="py-operator">=</span> <span class="py-number">85</span></span></div><div class="line" data-help-role="Cette condition démarre par le seuil 70. Dans cet exemple pédagogique, elle montre qu’un ordre mal choisi peut empêcher les mentions plus hautes d’être testées correctement ensuite." data-help-title="Ordre de test discutable"><span class="line-no">2</span><span class="line-text"><span class="py-keyword">if</span> <span class="py-default">note</span> <span class="py-operator">&gt;=</span> <span class="py-number">70</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne affiche la mention C lorsque la note atteint la tranche C dans l’exemple." data-help-title="Attribution de la mention C"><span class="line-no">3</span><span class="line-text indent-1"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"C"</span><span class="py-operator">)</span></span></div><div class="line" data-help-role="Cette ligne est évaluée seulement si la note n’a pas atteint 90. Elle vérifie ensuite si la note mérite la mention B." data-help-title="Test pour la note B"><span class="line-no">4</span><span class="line-text"><span class="py-keyword">elif</span> <span class="py-default">note</span> <span class="py-operator">&gt;=</span> <span class="py-number">80</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne affiche la mention B lorsque la note atteint le seuil correspondant sans atteindre la tranche A." data-help-title="Attribution de la mention B"><span class="line-no">5</span><span class="line-text indent-1"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"B"</span><span class="py-operator">)</span></span></div><div class="line" data-help-role="Cette ligne ajoute un nouveau test à vérifier seulement si les conditions précédentes étaient fausses dans cet exemple." data-help-title="Condition alternative"><span class="line-no">6</span><span class="line-text"><span class="py-keyword">elif</span> <span class="py-default">note</span> <span class="py-operator">&gt;=</span> <span class="py-number">90</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne affiche la mention A lorsque la note se situe dans la meilleure tranche de l’exemple." data-help-title="Attribution de la mention A"><span class="line-no">7</span><span class="line-text indent-1"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"A"</span><span class="py-operator">)</span></span></div>
+</div>
+</div>
+</section></section></div><div class="callout spaced-block warning-callout"><strong>Règle à retenir :</strong> quand plusieurs conditions se ressemblent, il faut souvent commencer par la plus précise ou la plus restrictive.</div></div></section></div>
+</section><section class="part" id="partie-8">
+<div class="part-header"><h2 class="part-title">Structure conditionnelle à choix multiple</h2></div>
+<div class="part-body"><section class="section-block line-section"><h3 class="section-title">Définition</h3><div class="section-body"><p>La structure à choix multiple sert à sélectionner un traitement parmi plusieurs possibilités qui dépendent toutes de la même variable. Dans d’autres langages, on parle parfois de <em>switch</em> ou de <em>case</em>.</p></div></section><section class="section-block line-section"><h3 class="section-title">Forme en algorithmique et représentation en Python</h3><div class="section-body"><div class="duo-grid"><section class="algorithm-embed"><section class="code-window theme-algorithm" data-help-role="Ce bloc montre la logique de choix_multiple.algo avant sa traduction en code. Chaque ligne explique le rôle précis de la structure dans la démonstration." data-help-title="Bloc algorithmique">
+<div class="window-header">
+<div class="window-controls"><span></span><span></span><span></span></div>
+<div class="window-title">choix_multiple.algo</div>
+</div>
+<div class="code-body">
+<div class="terminal-intro">Pseudo-code — logique algorithmique</div>
+<div class="code-content algorithm-content">
+<div class="line" data-help-role="Cette ligne annonce qu’une valeur unique, appelée sélecteur, va être comparée à plusieurs cas possibles." data-help-title="Début du choix multiple"><span class="line-no">1</span><span class="line-text algo-text"><span class="algo-keyword">Selon</span> sélecteur <span class="algo-keyword">Faire</span></span></div><div class="line" data-help-role="Cette ligne associe le premier traitement au premier cas possible du sélecteur." data-help-title="Premier cas du sélecteur"><span class="line-no">2</span><span class="line-text algo-text indent-1">Valeur <span class="algo-number">1</span> : Traitement <span class="algo-number">1</span></span></div><div class="line" data-help-role="Cette ligne associe un autre traitement à une deuxième valeur possible du sélecteur." data-help-title="Deuxième cas du sélecteur"><span class="line-no">3</span><span class="line-text algo-text indent-1">Valeur <span class="algo-number">2</span> : Traitement <span class="algo-number">2</span></span></div><div class="line" data-help-role="Cette ligne associe le traitement prévu à une troisième valeur possible du sélecteur." data-help-title="Troisième cas du sélecteur"><span class="line-no">4</span><span class="line-text algo-text indent-1">Valeur <span class="algo-number">3</span> : Traitement <span class="algo-number">3</span></span></div><div class="line" data-help-role="Cette ligne ouvre le bloc de secours exécuté quand aucune des conditions précédentes n’est vraie dans cet exemple." data-help-title="Cas contraire"><span class="line-no">5</span><span class="line-text algo-text indent-1"><span class="algo-keyword">Sinon</span> : Traitement final</span></div><div class="line" data-help-role="Cette ligne ferme la structure à choix multiple pour montrer clairement où la sélection de cas se termine." data-help-title="Fin du choix multiple"><span class="line-no">6</span><span class="line-text algo-text"><span class="algo-keyword"><span class="algo-keyword">Fin</span> <span class="algo-keyword">Selon</span></span></span></div>
+</div>
+</div>
+</section></section><section class="syntax-card"><h4>En Python</h4><p>Dans cette leçon, on représente généralement ce type de décision avec une suite de <strong>if</strong>, <strong>elif</strong> et <strong>else</strong>.</p></section></div></div></section><section class="section-block line-section"><h3 class="section-title">Exemple</h3><div class="section-body"><section class="snippet-embed"><section class="code-window theme-python" data-help-role="Fichier Python — exemple. Ce bloc présente un exemple concret tiré de la leçon dans choix_jour.py. Les aides décrivent le rôle exact de chaque ligne dans ce contexte précis." data-help-title="Bloc Python">
+<div class="window-header">
+<div class="window-controls"><span></span><span></span><span></span></div>
+<div class="window-title">choix_jour.py</div>
+</div>
+<div class="code-body">
+<div class="terminal-intro">Fichier Python — exemple</div>
+<div class="code-content">
+<div class="line" data-help-role="Cette ligne récupère le numéro de jour saisi par l’utilisateur, le convertit en entier puis le stocke dans jour pour choisir ensuite le bon nom de jour." data-help-title="Saisie du numéro de jour"><span class="line-no">1</span><span class="line-text"><span class="py-default">jour</span> <span class="py-operator">=</span> <span class="py-builtin">int</span><span class="py-operator">(</span><span class="py-builtin">input</span><span class="py-operator">(</span><span class="py-string">"Entrez un numéro de jour : "</span><span class="py-operator">)</span><span class="py-operator">)</span></span></div><div class="line" data-help-role="Cette ligne vérifie si le numéro saisi est 1 afin d’afficher Lundi pour ce premier cas du choix multiple simulé avec if / elif." data-help-title="Cas Lundi"><span class="line-no">2</span><span class="line-text"><span class="py-keyword">if</span> <span class="py-default">jour</span> <span class="py-operator">==</span> <span class="py-number">1</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne affiche le nom du jour correspondant au cas où jour vaut 1." data-help-title="Affichage de Lundi"><span class="line-no">3</span><span class="line-text indent-1"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"Lundi"</span><span class="py-operator">)</span></span></div><div class="line" data-help-role="Cette ligne teste si le numéro saisi correspond à 2 afin d’afficher Mardi si le premier cas n’a pas été retenu." data-help-title="Cas Mardi"><span class="line-no">4</span><span class="line-text"><span class="py-keyword">elif</span> <span class="py-default">jour</span> <span class="py-operator">==</span> <span class="py-number">2</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne affiche Mardi lorsque le numéro de jour saisi vaut 2." data-help-title="Affichage de Mardi"><span class="line-no">5</span><span class="line-text indent-1"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"Mardi"</span><span class="py-operator">)</span></span></div><div class="line" data-help-role="Cette ligne teste le numéro 3 pour afficher Mercredi si les cas précédents n’étaient pas vrais." data-help-title="Cas Mercredi"><span class="line-no">6</span><span class="line-text"><span class="py-keyword">elif</span> <span class="py-default">jour</span> <span class="py-operator">==</span> <span class="py-number">3</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne affiche Mercredi lorsque le numéro saisi correspond au troisième cas." data-help-title="Affichage de Mercredi"><span class="line-no">7</span><span class="line-text indent-1"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"Mercredi"</span><span class="py-operator">)</span></span></div><div class="line" data-help-role="Cette ligne teste le numéro 4 afin d’associer la bonne journée à la saisie de l’utilisateur." data-help-title="Cas Jeudi"><span class="line-no">8</span><span class="line-text"><span class="py-keyword">elif</span> <span class="py-default">jour</span> <span class="py-operator">==</span> <span class="py-number">4</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne affiche Jeudi lorsque le numéro de jour correspond au quatrième cas." data-help-title="Affichage de Jeudi"><span class="line-no">9</span><span class="line-text indent-1"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"Jeudi"</span><span class="py-operator">)</span></span></div><div class="line" data-help-role="Cette ligne teste le numéro 5 pour afficher Vendredi si aucun des jours précédents n’a été sélectionné." data-help-title="Cas Vendredi"><span class="line-no">10</span><span class="line-text"><span class="py-keyword">elif</span> <span class="py-default">jour</span> <span class="py-operator">==</span> <span class="py-number">5</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne affiche Vendredi lorsque le numéro saisi correspond au cinquième cas prévu." data-help-title="Affichage de Vendredi"><span class="line-no">11</span><span class="line-text indent-1"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"Vendredi"</span><span class="py-operator">)</span></span></div><div class="line" data-help-role="Cette branche gère la situation où la valeur saisie ne correspond à aucun des cas explicitement prévus plus haut." data-help-title="Cas hors valeurs prévues"><span class="line-no">12</span><span class="line-text"><span class="py-keyword">else</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne avertit que la saisie ne correspond à aucun des numéros de jour explicitement prévus dans l’exemple." data-help-title="Affichage du cas invalide"><span class="line-no">13</span><span class="line-text indent-1"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"Valeur invalide ou autre cas"</span><span class="py-operator">)</span></span></div>
+</div>
+</div>
+</section></section><div class="resultblock">
+<div aria-label="Exemple de résultat attendu" class="pcframe screen-m">
+<div class="pcinner">
+<pre class="resultpre" data-help-role="Ce bloc montre la sortie visible que l’on doit obtenir quand le code de l’exemple précédent fonctionne correctement." data-help-title="Exemple de résultat attendu">Exemples possibles
+jour = 1  -&gt; Lundi
+jour = 4  -&gt; Jeudi
+jour = 9  -&gt; Valeur invalide ou autre cas</pre>
+</div>
+</div>
+</div><p>Le sélecteur est souvent une seule variable : un entier, un caractère ou un booléen. On compare cette même variable à plusieurs valeurs possibles.</p></div></section></div>
+</section><section class="part" id="partie-9">
+<div class="part-header"><h2 class="part-title">Erreurs fréquentes à éviter</h2></div>
+<div class="part-body"><section class="section-block line-section"><h3 class="section-title">Oublier les deux-points</h3><div class="section-body"><div class="duo-grid"><section class="snippet-embed"><section class="code-window theme-python bad-example" data-help-role="Ce bloc présente volontairement une écriture erronée dans sans_deux_points.py afin de faire repérer l’erreur et de la comparer ensuite avec la version correcte." data-help-title="Exemple incorrect à analyser">
+<div class="window-header">
+<div class="window-controls"><span></span><span></span><span></span></div>
+<div class="window-title">sans_deux_points.py</div>
+</div>
+<div class="code-body">
+<div class="terminal-intro">Version incorrecte</div>
+<div class="code-content">
+<div class="line" data-help-role="Cette ligne sert d’exemple d’erreur : la condition est bien écrite, mais les deux-points obligatoires manquent à la fin du if." data-help-title="Erreur de syntaxe à repérer"><span class="line-no">1</span><span class="line-text"><span class="py-keyword">if</span> <span class="py-default">x</span> <span class="py-operator">&gt;</span> <span class="py-number">0</span></span></div><div class="line" data-help-role="Cette ligne affiche que la valeur est positive lorsque le programme arrive dans la branche correspondante." data-help-title="Affichage du cas positif"><span class="line-no">2</span><span class="line-text indent-1"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"positif"</span><span class="py-operator">)</span></span></div>
+</div>
+</div>
+</section></section><section class="snippet-embed"><section class="code-window theme-python good-example" data-help-role="Ce bloc montre la forme correcte à retenir dans avec_deux_points.py. Les aides expliquent pourquoi chaque ligne fonctionne dans ce cas précis." data-help-title="Exemple correct de référence">
+<div class="window-header">
+<div class="window-controls"><span></span><span></span><span></span></div>
+<div class="window-title">avec_deux_points.py</div>
+</div>
+<div class="code-body">
+<div class="terminal-intro">Version correcte</div>
+<div class="code-content">
+<div class="line" data-help-role="Cette condition vérifie si x est strictement positif pour décider s’il faut afficher le message positif." data-help-title="Test de positivité"><span class="line-no">1</span><span class="line-text"><span class="py-keyword">if</span> <span class="py-default">x</span> <span class="py-operator">&gt;</span> <span class="py-number">0</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne affiche que la valeur est positive lorsque le programme arrive dans la branche correspondante." data-help-title="Affichage du cas positif"><span class="line-no">2</span><span class="line-text indent-1"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"positif"</span><span class="py-operator">)</span></span></div>
+</div>
+</div>
+</section></section></div></div></section><section class="section-block line-section"><h3 class="section-title">Mauvaise indentation</h3><div class="section-body"><div class="duo-grid"><section class="snippet-embed"><section class="code-window theme-python bad-example" data-help-role="Ce bloc présente volontairement une écriture erronée dans indentation_incorrecte.py afin de faire repérer l’erreur et de la comparer ensuite avec la version correcte." data-help-title="Exemple incorrect à analyser">
+<div class="window-header">
+<div class="window-controls"><span></span><span></span><span></span></div>
+<div class="window-title">indentation_incorrecte.py</div>
+</div>
+<div class="code-body">
+<div class="terminal-intro">Version incorrecte</div>
+<div class="code-content">
+<div class="line" data-help-role="Cette condition vérifie si x est strictement positif pour décider s’il faut afficher le message positif." data-help-title="Test de positivité"><span class="line-no">1</span><span class="line-text"><span class="py-keyword">if</span> <span class="py-default">x</span> <span class="py-operator">&gt;</span> <span class="py-number">0</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne affiche que la valeur est positive lorsque le programme arrive dans la branche correspondante." data-help-title="Affichage du cas positif"><span class="line-no">2</span><span class="line-text"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"positif"</span><span class="py-operator">)</span></span></div>
+</div>
+</div>
+</section></section><section class="snippet-embed"><section class="code-window theme-python good-example" data-help-role="Ce bloc montre la forme correcte à retenir dans indentation_correcte.py. Les aides expliquent pourquoi chaque ligne fonctionne dans ce cas précis." data-help-title="Exemple correct de référence">
+<div class="window-header">
+<div class="window-controls"><span></span><span></span><span></span></div>
+<div class="window-title">indentation_correcte.py</div>
+</div>
+<div class="code-body">
+<div class="terminal-intro">Version correcte</div>
+<div class="code-content">
+<div class="line" data-help-role="Cette condition vérifie si x est strictement positif pour décider s’il faut afficher le message positif." data-help-title="Test de positivité"><span class="line-no">1</span><span class="line-text"><span class="py-keyword">if</span> <span class="py-default">x</span> <span class="py-operator">&gt;</span> <span class="py-number">0</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne affiche que la valeur est positive lorsque le programme arrive dans la branche correspondante." data-help-title="Affichage du cas positif"><span class="line-no">2</span><span class="line-text indent-1"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"positif"</span><span class="py-operator">)</span></span></div>
+</div>
+</div>
+</section></section></div></div></section><section class="section-block line-section"><h3 class="section-title">Confondre = et ==</h3><div class="section-body"><div class="duo-grid"><section class="snippet-embed"><section class="code-window theme-python bad-example" data-help-role="Ce bloc présente volontairement une écriture erronée dans egal_incorrect.py afin de faire repérer l’erreur et de la comparer ensuite avec la version correcte." data-help-title="Exemple incorrect à analyser">
+<div class="window-header">
+<div class="window-controls"><span></span><span></span><span></span></div>
+<div class="window-title">egal_incorrect.py</div>
+</div>
+<div class="code-body">
+<div class="terminal-intro">Version incorrecte</div>
+<div class="code-content">
+<div class="line" data-help-role="Cette ligne réalise le test principal de l’exemple présenté dans confondre = et == afin de décider si le bloc indenté doit être exécuté." data-help-title="Test conditionnel"><span class="line-no">1</span><span class="line-text"><span class="py-keyword">if</span> <span class="py-default">x</span> <span class="py-operator">=</span> <span class="py-number">5</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne affiche un simple message de confirmation lorsque la condition précédente est vraie." data-help-title="Affichage de confirmation"><span class="line-no">2</span><span class="line-text indent-1"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"oui"</span><span class="py-operator">)</span></span></div>
+</div>
+</div>
+</section></section><section class="snippet-embed"><section class="code-window theme-python good-example" data-help-role="Ce bloc montre la forme correcte à retenir dans egal_correct.py. Les aides expliquent pourquoi chaque ligne fonctionne dans ce cas précis." data-help-title="Exemple correct de référence">
+<div class="window-header">
+<div class="window-controls"><span></span><span></span><span></span></div>
+<div class="window-title">egal_correct.py</div>
+</div>
+<div class="code-body">
+<div class="terminal-intro">Version correcte</div>
+<div class="code-content">
+<div class="line" data-help-role="Cette ligne vérifie correctement si x vaut 5, contrairement à l’exemple erroné qui utilisait une affectation." data-help-title="Test d’égalité correct"><span class="line-no">1</span><span class="line-text"><span class="py-keyword">if</span> <span class="py-default">x</span> <span class="py-operator">==</span> <span class="py-number">5</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne affiche un simple message de confirmation lorsque la condition précédente est vraie." data-help-title="Affichage de confirmation"><span class="line-no">2</span><span class="line-text indent-1"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"oui"</span><span class="py-operator">)</span></span></div>
+</div>
+</div>
+</section></section></div></div></section><section class="section-block line-section"><h3 class="section-title">Mal ordonner les conditions et compliquer inutilement un test</h3><div class="section-body"><p>Dans une structure <strong>if / elif / else</strong>, l’ordre change le résultat. Il faut aussi éviter d’écrire une condition inutilement compliquée quand une forme plus simple existe.</p><div class="duo-grid"><section class="snippet-embed"><section class="code-window theme-python" data-help-role="Écriture plus lourde. Ce bloc présente un exemple concret tiré de la leçon dans condition_longue.py. Les aides décrivent le rôle exact de chaque ligne dans ce contexte précis." data-help-title="Bloc Python">
+<div class="window-header">
+<div class="window-controls"><span></span><span></span><span></span></div>
+<div class="window-title">condition_longue.py</div>
+</div>
+<div class="code-body">
+<div class="terminal-intro">Écriture plus lourde</div>
+<div class="code-content">
+<div class="line" data-help-role="Cette condition vérifie que x est soit négatif soit positif. Dans la leçon, elle sert à montrer une écriture correcte mais inutilement compliquée de x != 0." data-help-title="Test verbeux de différence à zéro"><span class="line-no">1</span><span class="line-text"><span class="py-keyword">if</span> <span class="py-default">x</span> <span class="py-operator">&lt;</span> <span class="py-number">0</span> <span class="py-keyword">or</span> <span class="py-default">x</span> <span class="py-operator">&gt;</span> <span class="py-number">0</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne affiche le message confirmant que x n’est pas nul lorsque la condition placée juste au-dessus est vraie." data-help-title="Affichage de la différence à zéro"><span class="line-no">2</span><span class="line-text indent-1"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"x est différent de 0"</span><span class="py-operator">)</span></span></div>
+</div>
+</div>
+</section></section><section class="snippet-embed"><section class="code-window theme-python" data-help-role="Écriture plus claire. Ce bloc présente un exemple concret tiré de la leçon dans condition_simple.py. Les aides décrivent le rôle exact de chaque ligne dans ce contexte précis." data-help-title="Bloc Python">
+<div class="window-header">
+<div class="window-controls"><span></span><span></span><span></span></div>
+<div class="window-title">condition_simple.py</div>
+</div>
+<div class="code-body">
+<div class="terminal-intro">Écriture plus claire</div>
+<div class="code-content">
+<div class="line" data-help-role="Cette condition vérifie directement que x est différent de 0. Elle remplace plus clairement le test plus long montré juste à côté." data-help-title="Test simplifié"><span class="line-no">1</span><span class="line-text"><span class="py-keyword">if</span> <span class="py-default">x</span> <span class="py-operator">!=</span> <span class="py-number">0</span><span class="py-operator">:</span></span></div><div class="line" data-help-role="Cette ligne affiche le message confirmant que x n’est pas nul lorsque la condition placée juste au-dessus est vraie." data-help-title="Affichage de la différence à zéro"><span class="line-no">2</span><span class="line-text indent-1"><span class="py-builtin">print</span><span class="py-operator">(</span><span class="py-string">"x est différent de 0"</span><span class="py-operator">)</span></span></div>
+</div>
+</div>
+</section></section></div></div></section></div>
+</section><section class="part" id="partie-10">
+<div class="part-header"><h2 class="part-title">Méthode pour analyser une condition</h2></div>
+<div class="part-body"><section class="section-block line-section"><h3 class="section-title">Méthode de lecture</h3><div class="section-body"><p>Quand tu lis une condition, prends l’habitude de faire toujours la même analyse.</p><ol><li>Repérer la variable.</li><li>Repérer l’opérateur.</li><li>Traduire la condition en français.</li><li>Imaginer un exemple vrai et un exemple faux.</li></ol></div></section><section class="section-block line-section"><h3 class="section-title">Exemple complet</h3><div class="section-body"><section class="syntax-card"><h4>Condition étudiée</h4><pre data-help-role="Ce bloc regroupe une écriture utile à mémoriser pour comprendre exemple complet et relire rapidement condition étudiée." data-help-title="Syntaxe à retenir">age &gt;= 18</pre></section><div class="table-wrap spaced-block"><table><thead><tr><th>Élément</th><th>Analyse</th></tr></thead><tbody><tr><td>Variable</td><td>age</td></tr><tr><td>Opérateur</td><td>&gt;=</td></tr><tr><td>Lecture</td><td>âge supérieur ou égal à 18</td></tr><tr><td>Exemple vrai</td><td>20</td></tr><tr><td>Exemple faux</td><td>15</td></tr></tbody></table></div></div></section></div>
+</section><section class="part" id="partie-11">
+<div class="part-header"><h2 class="part-title">Mini synthèse</h2></div>
+<div class="part-body"><section class="section-block line-section"><h3 class="section-title">Vue d’ensemble des structures vues</h3><div class="section-body"><div class="table-wrap spaced-block"><table class="summary-table"><thead><tr><th>Structure</th><th>Quand l’utiliser</th><th>Idée centrale</th></tr></thead><tbody><tr><td>Structure réduite</td><td>Quand on veut faire une action dans un seul cas</td><td>Le traitement s’exécute seulement si la condition est vraie.</td></tr><tr><td>Structure avec alternative</td><td>Quand on veut choisir entre deux cas</td><td>Un bloc est exécuté si la condition est vraie, l’autre sinon.</td></tr><tr><td>Structure généralisée</td><td>Quand on veut distinguer plusieurs cas</td><td>Les conditions sont testées dans l’ordre, puis un seul bloc est exécuté.</td></tr><tr><td>Choix multiple</td><td>Quand plusieurs traitements dépendent d’une même variable</td><td>On compare un même sélecteur à plusieurs valeurs possibles.</td></tr></tbody></table></div></div></section></div>
+</section><section class="part" id="partie-12">
+<div class="part-header"><h2 class="part-title">À retenir absolument</h2></div>
+<div class="part-body"><section class="section-block line-section"><h3 class="section-title">Points à retenir</h3><div class="section-body"><ul><li>Une condition produit <strong>True</strong> ou <strong>False</strong>.</li><li>Les opérateurs de comparaison servent à construire des tests.</li><li><strong>=</strong> ne veut pas dire la même chose que <strong>==</strong>.</li><li><strong>if</strong> sert à tester une condition.</li><li><strong>else</strong> sert au cas contraire.</li><li><strong>elif</strong> sert à ajouter d’autres cas.</li><li>L’indentation en Python est obligatoire.</li><li>L’ordre des conditions peut changer le résultat du programme.</li></ul><div class="callout spaced-block final-callout"><strong>Message pédagogique final :</strong> plus tu apprends à lire correctement une condition, plus tu deviens capable de construire des programmes fiables, clairs et utiles.</div></div></section></div>
+</section><section class="part" id="partie-13">
+<div class="part-header"><h2 class="part-title">Exercices rapides de compréhension</h2></div>
+<div class="part-body"><section class="section-block line-section"><h3 class="section-title">Exercices rapides de compréhension</h3><div class="section-body"><ol class="exercise-list"><li><strong>Exercice 1 :</strong> que teste la condition suivante ?<br/><code>x % 2 == 0</code></li><li><strong>Exercice 2 :</strong> que va afficher ce code si <code>note = 45</code> ?<br/><code>if note &gt;= 60:</code><br/><code>    print("Réussite")</code><br/><code>else:</code><br/><code>    print("Échec")</code></li><li><strong>Exercice 3 :</strong> compléter le code suivant :<br/><code>age = int(input("Entrez votre âge : "))</code><br/><code>if age &gt;= 18:</code><br/><code>    print("...")</code><br/><code>else:</code><br/><code>    print("...")</code></li><li><strong>Exercice 4 :</strong> écrire un programme qui affiche <strong>positif</strong> si le nombre est supérieur à 0, <strong>nul</strong> s’il vaut 0, et <strong>négatif</strong> sinon.</li></ol><div class="callout spaced-block lesson-callout"><strong>Conclusion :</strong> les structures conditionnelles sont au cœur de la logique de programmation. La prochaine étape naturelle consiste à pratiquer ces notions à travers plusieurs petits exercices, puis à combiner les conditions avec les boucles et les fonctions.</div></div></section></div>
+</section>
+<section class="card qcm-card" id="qcm-final">
+<h2>QCM final de validation</h2><p class="qcm-access-note">Utilise la touche Tab pour parcourir les choix puis valide avec le bouton final.</p>
+<p class="qcm-intro">Réponds aux 10 questions ci-dessous, puis valide l’ensemble avec le bouton final. La réussite est obtenue à partir de <strong>6 bonnes réponses sur 10</strong>.</p>
+<div id="qcmFinal">
+<div class="qcm-form qcm-block">
+<article class="qcm-question" data-correct="b" data-hint="Relis l’introduction générale de la leçon sur le rôle des structures conditionnelles.">
+<h3 class="qcm-question-title">Question 1 — Quel est le rôle principal d’une structure conditionnelle dans un programme ?</h3>
+<div class="qcm-options">
+<label class="qcm-option" for="q1-a">
+<input id="q1-a" name="q1" type="radio" value="a"/>
+<span>Répéter automatiquement une instruction un nombre fixe de fois.</span>
+</label><label class="qcm-option" for="q1-b">
+<input id="q1-b" name="q1" type="radio" value="b"/>
+<span>Permettre au programme de prendre une décision selon une situation.</span>
+</label><label class="qcm-option" for="q1-c">
+<input id="q1-c" name="q1" type="radio" value="c"/>
+<span>Déclarer plusieurs variables en une seule ligne.</span>
+</label><label class="qcm-option" for="q1-d">
+<input id="q1-d" name="q1" type="radio" value="d"/>
+<span>Afficher toutes les valeurs possibles sans test préalable.</span>
+</label>
+</div>
+</article><article class="qcm-question" data-correct="c" data-hint="Revois la différence entre expression arithmétique et expression booléenne.">
+<h3 class="qcm-question-title">Question 2 — Que produit une expression booléenne ?</h3>
+<div class="qcm-options">
+<label class="qcm-option" for="q2-a">
+<input id="q2-a" name="q2" type="radio" value="a"/>
+<span>Toujours un nombre entier.</span>
+</label><label class="qcm-option" for="q2-b">
+<input id="q2-b" name="q2" type="radio" value="b"/>
+<span>Toujours un texte.</span>
+</label><label class="qcm-option" for="q2-c">
+<input id="q2-c" name="q2" type="radio" value="c"/>
+<span>Une réponse vraie ou fausse.</span>
+</label><label class="qcm-option" for="q2-d">
+<input id="q2-d" name="q2" type="radio" value="d"/>
+<span>Une liste de résultats.</span>
+</label>
+</div>
+</article><article class="qcm-question" data-correct="b" data-hint="Relis la partie sur l’affectation et la comparaison.">
+<h3 class="qcm-question-title">Question 3 — Quel opérateur faut-il utiliser pour tester l’égalité en Python ?</h3>
+<div class="qcm-options">
+<label class="qcm-option" for="q3-a">
+<input id="q3-a" name="q3" type="radio" value="a"/>
+<span>=</span>
+</label><label class="qcm-option" for="q3-b">
+<input id="q3-b" name="q3" type="radio" value="b"/>
+<span>==</span>
+</label><label class="qcm-option" for="q3-c">
+<input id="q3-c" name="q3" type="radio" value="c"/>
+<span>&gt;=</span>
+</label><label class="qcm-option" for="q3-d">
+<input id="q3-d" name="q3" type="radio" value="d"/>
+<span>!=</span>
+</label>
+</div>
+</article><article class="qcm-question" data-correct="b" data-hint="Revois la définition de la structure conditionnelle réduite.">
+<h3 class="qcm-question-title">Question 4 — Dans une structure conditionnelle réduite, que se passe-t-il si la condition est fausse ?</h3>
+<div class="qcm-options">
+<label class="qcm-option" for="q4-a">
+<input id="q4-a" name="q4" type="radio" value="a"/>
+<span>Le programme exécute automatiquement un bloc else caché.</span>
+</label><label class="qcm-option" for="q4-b">
+<input id="q4-b" name="q4" type="radio" value="b"/>
+<span>Le programme ne fait rien dans ce bloc.</span>
+</label><label class="qcm-option" for="q4-c">
+<input id="q4-c" name="q4" type="radio" value="c"/>
+<span>Le programme s’arrête immédiatement.</span>
+</label><label class="qcm-option" for="q4-d">
+<input id="q4-d" name="q4" type="radio" value="d"/>
+<span>Le test devient vrai au prochain passage.</span>
+</label>
+</div>
+</article><article class="qcm-question" data-correct="c" data-hint="Relis la structure conditionnelle avec alternative.">
+<h3 class="qcm-question-title">Question 5 — À quoi sert principalement le mot-clé else ?</h3>
+<div class="qcm-options">
+<label class="qcm-option" for="q5-a">
+<input id="q5-a" name="q5" type="radio" value="a"/>
+<span>À ajouter une nouvelle variable au programme.</span>
+</label><label class="qcm-option" for="q5-b">
+<input id="q5-b" name="q5" type="radio" value="b"/>
+<span>À répéter un traitement jusqu’à ce qu’une condition change.</span>
+</label><label class="qcm-option" for="q5-c">
+<input id="q5-c" name="q5" type="radio" value="c"/>
+<span>À gérer le cas contraire lorsque la condition testée est fausse.</span>
+</label><label class="qcm-option" for="q5-d">
+<input id="q5-d" name="q5" type="radio" value="d"/>
+<span>À déclarer une condition composée.</span>
+</label>
+</div>
+</article><article class="qcm-question" data-correct="b" data-hint="Relis l’exemple sur les notes et la règle concernant la condition la plus précise.">
+<h3 class="qcm-question-title">Question 6 — Pourquoi l’ordre des conditions est-il important dans une structure if / elif / else ?</h3>
+<div class="qcm-options">
+<label class="qcm-option" for="q6-a">
+<input id="q6-a" name="q6" type="radio" value="a"/>
+<span>Parce que Python lit uniquement la dernière condition.</span>
+</label><label class="qcm-option" for="q6-b">
+<input id="q6-b" name="q6" type="radio" value="b"/>
+<span>Parce que la première condition vraie arrête le reste des tests.</span>
+</label><label class="qcm-option" for="q6-c">
+<input id="q6-c" name="q6" type="radio" value="c"/>
+<span>Parce que toutes les conditions sont exécutées en même temps.</span>
+</label><label class="qcm-option" for="q6-d">
+<input id="q6-d" name="q6" type="radio" value="d"/>
+<span>Parce que l’ordre ne change rien tant qu’il y a un else.</span>
+</label>
+</div>
+</article><article class="qcm-question" data-correct="a" data-hint="Revois la partie sur le choix multiple et le rôle du sélecteur.">
+<h3 class="qcm-question-title">Question 7 — Dans une structure à choix multiple, qu’a-t-on le plus souvent comme sélecteur ?</h3>
+<div class="qcm-options">
+<label class="qcm-option" for="q7-a">
+<input id="q7-a" name="q7" type="radio" value="a"/>
+<span>Une seule variable comparée à plusieurs valeurs.</span>
+</label><label class="qcm-option" for="q7-b">
+<input id="q7-b" name="q7" type="radio" value="b"/>
+<span>Toujours deux variables comparées en même temps.</span>
+</label><label class="qcm-option" for="q7-c">
+<input id="q7-c" name="q7" type="radio" value="c"/>
+<span>Uniquement un résultat déjà affiché à l’écran.</span>
+</label><label class="qcm-option" for="q7-d">
+<input id="q7-d" name="q7" type="radio" value="d"/>
+<span>Un commentaire Python.</span>
+</label>
+</div>
+</article><article class="qcm-question" data-correct="a" data-hint="Relis les erreurs fréquentes à éviter, surtout l’oubli des deux-points.">
+<h3 class="qcm-question-title">Question 8 — Quelle erreur est présente dans ce début de code : if x &gt; 0</h3>
+<div class="qcm-options">
+<label class="qcm-option" for="q8-a">
+<input id="q8-a" name="q8" type="radio" value="a"/>
+<span>Il manque le signe : à la fin de la condition.</span>
+</label><label class="qcm-option" for="q8-b">
+<input id="q8-b" name="q8" type="radio" value="b"/>
+<span>Il manque obligatoirement un elif.</span>
+</label><label class="qcm-option" for="q8-c">
+<input id="q8-c" name="q8" type="radio" value="c"/>
+<span>Le test devrait commencer par else.</span>
+</label><label class="qcm-option" for="q8-d">
+<input id="q8-d" name="q8" type="radio" value="d"/>
+<span>Il faut écrire la condition entre crochets.</span>
+</label>
+</div>
+</article><article class="qcm-question" data-correct="a" data-hint="Relis les explications sur la structure réduite et la mauvaise indentation.">
+<h3 class="qcm-question-title">Question 9 — Pourquoi l’indentation est-elle importante en Python dans une structure conditionnelle ?</h3>
+<div class="qcm-options">
+<label class="qcm-option" for="q9-a">
+<input id="q9-a" name="q9" type="radio" value="a"/>
+<span>Parce qu’elle fait partie de la syntaxe et délimite le bloc d’instructions.</span>
+</label><label class="qcm-option" for="q9-b">
+<input id="q9-b" name="q9" type="radio" value="b"/>
+<span>Parce qu’elle sert seulement à rendre le code plus joli.</span>
+</label><label class="qcm-option" for="q9-c">
+<input id="q9-c" name="q9" type="radio" value="c"/>
+<span>Parce qu’elle remplace toujours les parenthèses.</span>
+</label><label class="qcm-option" for="q9-d">
+<input id="q9-d" name="q9" type="radio" value="d"/>
+<span>Parce qu’elle indique le type de variable utilisé.</span>
+</label>
+</div>
+</article><article class="qcm-question" data-correct="c" data-hint="Reprends l’exercice rapide et l’exemple pair / impair.">
+<h3 class="qcm-question-title">Question 10 — Que teste la condition x % 2 == 0 ?</h3>
+<div class="qcm-options">
+<label class="qcm-option" for="q10-a">
+<input id="q10-a" name="q10" type="radio" value="a"/>
+<span>Si x est négatif.</span>
+</label><label class="qcm-option" for="q10-b">
+<input id="q10-b" name="q10" type="radio" value="b"/>
+<span>Si x est supérieur à 2.</span>
+</label><label class="qcm-option" for="q10-c">
+<input id="q10-c" name="q10" type="radio" value="c"/>
+<span>Si x est pair.</span>
+</label><label class="qcm-option" for="q10-d">
+<input id="q10-d" name="q10" type="radio" value="d"/>
+<span>Si x est divisible par 11.</span>
+</label>
+</div>
+</article>
+</div>
+<div class="qcm-actions">
+<button class="qcm-submit" type="button">Valider le QCM</button>
+</div>
+</div>
+</section>
+<div aria-hidden="true" class="qcm-overlay" id="qcmOverlay">
+<div aria-labelledby="qcmModalTitle" aria-modal="true" class="qcm-modal failure" role="dialog">
+<div class="qcm-modal-label">Validation à reprendre</div>
+<h3 class="qcm-modal-title" id="qcmModalTitle">Résultat du QCM</h3>
+<p class="qcm-modal-text">Le message de résultat apparaîtra ici.</p>
+<div class="qcm-modal-hints" hidden="">
+<h4 class="qcm-modal-hints-title">Pistes de relecture</h4>
+<ul class="qcm-hints"></ul>
+</div>
+<div class="qcm-modal-actions">
+<button class="qcm-retry" type="button">Reprendre</button>
+<button class="qcm-close" type="button">Fermer</button>
+</div>
+</div>
+</div>
+<footer class="course-footer">
+<div class="course-footer-left">Version 2026</div>
+<div class="course-footer-right">© <a class="footer-author-link" href="droits.html">Anis Ghaieb</a> — Support pédagogique original — Tous droits réservés</div>
+</footer>
+</main>
+<script src="assets/script.js"></script>
+</body>
+</html>

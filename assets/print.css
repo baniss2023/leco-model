@@ -1,0 +1,428 @@
+@page {
+  size: A4;
+  margin: 13mm 12mm 14mm;
+}
+
+html, body {
+  background: #ffffff !important;
+  color: #111827 !important;
+  font-size: 10.4pt;
+  line-height: 1.36;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body { margin: 0; }
+
+.document {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #ffffff !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.back-to-top,
+.exportbar,
+.actionbtn {
+  display: none !important;
+}
+
+.course-banner,
+.document-hero,
+.document-overview,
+.part,
+.card,
+.course-footer,
+.overview-panel,
+.syntax-card,
+.callout,
+.code-window,
+.pcframe,
+.pcinner,
+.table-wrap table {
+  box-shadow: none !important;
+}
+
+.course-banner {
+  display: grid !important;
+  grid-template-columns: 1.15fr 1.55fr 1fr !important;
+  align-items: center;
+  margin: 0 0 10px !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 10px !important;
+  background: #ffffff !important;
+  color: #111827 !important;
+  overflow: hidden;
+}
+
+.banner-left,
+.banner-center,
+.banner-right {
+  padding: 10px 12px !important;
+}
+
+.banner-left,
+.banner-center {
+  border-right: 1px solid #dbe3ec !important;
+}
+
+.banner-photo-wrap { border-color: #cbd5e1 !important; }
+
+.banner-name,
+.banner-course-line,
+.banner-college-main,
+.banner-college-sub,
+.banner-email,
+.course-footer-left,
+.course-footer-right,
+.footer-author-link,
+.document-title,
+.document-intro,
+.document-kicker,
+.overview-title,
+.part-title,
+.section-title,
+.card h2 {
+  color: #111827 !important;
+}
+
+.banner-course-line:first-child { font-size: 15pt !important; }
+.banner-course-line:last-child { font-size: 12.5pt !important; }
+.banner-logo { max-width: 92px !important; }
+
+.document-hero {
+  margin: 0 0 10px !important;
+  padding: 12px 14px 14px !important;
+  border: 1px solid #d5dce5 !important;
+  border-radius: 12px !important;
+  background: #f8fafc !important;
+}
+
+.hero-figure, .hero-image { display: none !important; }
+
+.document-kicker {
+  margin: 0 0 5px !important;
+  font-size: 9.2pt !important;
+  font-weight: 600;
+}
+
+.document-title {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 20pt !important;
+  line-height: 1.12 !important;
+}
+
+.document-intro {
+  margin: 8px 0 0 !important;
+  padding: 0 !important;
+  text-align: justify;
+}
+
+.document-overview {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 10px !important;
+  margin: 0 0 12px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+.overview-panel {
+  padding: 12px 14px !important;
+  border: 1px solid #d5dce5 !important;
+  border-radius: 12px !important;
+  background: #ffffff !important;
+}
+
+.overview-title {
+  margin: 0 0 10px !important;
+  padding: 0 0 6px !important;
+  border: 0 !important;
+  border-bottom: 1px solid #dbe3ec !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  font-size: 11.4pt !important;
+}
+
+.toc-list,
+.goal-list {
+  margin: 0 !important;
+  padding-left: 16px !important;
+}
+
+.toc-item + .toc-item,
+.goal-list li + li {
+  margin-top: 5px !important;
+  padding-top: 0 !important;
+  border-top: 0 !important;
+}
+
+.part,
+.card {
+  margin-top: 10px !important;
+  border: 1px solid #d5dce5 !important;
+  border-radius: 12px !important;
+  background: #ffffff !important;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.part-header {
+  padding: 10px 14px !important;
+  border-bottom: 1px solid #dbe3ec !important;
+  background: #f1f5f9 !important;
+  break-after: avoid-page;
+}
+
+.part-title {
+  margin: 0 !important;
+  font-size: 15pt !important;
+  line-height: 1.16 !important;
+}
+
+.part-body,
+.card {
+  padding: 12px 14px 14px !important;
+}
+
+.section-block,
+.syntax-card,
+.resultblock,
+.callout,
+.table-wrap {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.section-block + .section-block {
+  margin-top: 16px !important;
+}
+
+.section-title {
+  margin: 0 0 9px !important;
+  font-size: 12.2pt !important;
+}
+
+.line-section > .section-body {
+  border-left: 3px solid #d5dce5 !important;
+  padding-left: 12px !important;
+}
+
+p, ul, ol { margin: 0 0 8px !important; }
+li + li { margin-top: 4px !important; }
+
+.callout,
+.syntax-card {
+  padding: 10px 12px !important;
+  border: 1px solid #dbe3ec !important;
+  border-radius: 10px !important;
+  background: #fafbfd !important;
+}
+
+.syntax-card pre,
+.resultpre {
+  font-size: 9pt !important;
+}
+
+.code-window {
+  border: 1px solid #dbe3ec !important;
+  border-radius: 10px !important;
+  background: #ffffff !important;
+}
+
+.window-header {
+  padding: 8px 10px !important;
+  border-bottom: 1px solid #dbe3ec !important;
+  background: #f1f5f9 !important;
+}
+
+.window-title,
+.terminal-intro,
+.line-no,
+.line-text,
+.py-keyword,
+.py-string,
+.py-number,
+.py-comment,
+.py-function,
+.py-builtin,
+.py-operator,
+.py-default,
+.py-boolean {
+  color: #111827 !important;
+}
+
+.terminal-intro {
+  padding: 8px 10px 4px !important;
+}
+
+.line {
+  grid-template-columns: 34px minmax(0, 1fr) !important;
+}
+
+.line-no {
+  padding-right: 8px !important;
+  border-right: 1px solid #e5e7eb !important;
+}
+
+.line-text {
+  padding: 0 10px !important;
+}
+
+.pcframe {
+  padding: 18px 10px 10px !important;
+  border: 1px solid #dbe3ec !important;
+  border-radius: 10px !important;
+  background: #f8fafc !important;
+}
+
+.pcinner {
+  border: 1px solid #dbe3ec !important;
+  background: #ffffff !important;
+}
+
+.resultpre,
+.syntax-card pre {
+  background: #f8fafc !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+.course-footer {
+  margin-top: 12px !important;
+  padding: 10px 12px !important;
+  border: 1px solid #dbe3ec !important;
+  border-radius: 10px !important;
+  background: #ffffff !important;
+}
+
+@media print {
+  a[href] { text-decoration: none !important; }
+}
+
+
+.topbar {
+  background: transparent !important;
+  box-shadow: none !important;
+  margin: 0 0 10px !important;
+}
+
+.topbar-inner {
+  width: 100% !important;
+  padding: 0 !important;
+}
+
+.page-identity-strip-topbar {
+  display: grid !important;
+  grid-template-columns: 1.1fr 1fr 1.1fr !important;
+  gap: 8px !important;
+}
+
+.identity-card {
+  padding: 8px 10px !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 12px !important;
+  background: #ffffff !important;
+  box-shadow: none !important;
+}
+
+.identity-media {
+  width: 42px !important;
+  height: 42px !important;
+  flex-basis: 42px !important;
+  border-color: #cbd5e1 !important;
+}
+
+.identity-media-logo {
+  width: 96px !important;
+  height: 42px !important;
+  flex-basis: 96px !important;
+}
+
+.identity-label,
+.identity-copy strong,
+.identity-copy span:not(.identity-label) {
+  color: #111827 !important;
+}
+
+.identity-label {
+  font-size: 8.8pt !important;
+}
+
+.identity-copy strong {
+  font-size: 11pt !important;
+}
+
+.identity-copy span:not(.identity-label) {
+  font-size: 9pt !important;
+}
+
+.hero-wrap {
+  display: grid !important;
+  grid-template-columns: 1.15fr 0.85fr !important;
+  grid-template-areas:
+    "banner banner"
+    "title visual"
+    "intro visual" !important;
+  gap: 10px !important;
+}
+
+.hero-image-box,
+.lesson-title-box,
+.lesson-intro-box,
+.lesson-image-box {
+  box-shadow: none !important;
+}
+
+.hero-image-box {
+  height: 135px !important;
+  border-radius: 14px !important;
+}
+
+.lesson-title-box,
+.lesson-intro-box,
+.lesson-image-box {
+  border: 1px solid #d5dce5 !important;
+  border-radius: 12px !important;
+  background: #ffffff !important;
+}
+
+.lesson-title-box,
+.lesson-intro-box {
+  padding: 12px 14px !important;
+}
+
+.lesson-image-box {
+  min-height: 170px !important;
+  padding: 8px !important;
+}
+
+.lesson-tag {
+  font-size: 9pt !important;
+  color: #111827 !important;
+  background: #f8fafc !important;
+  border-color: #dbe3ec !important;
+}
+
+.lesson-title-hybrid {
+  font-size: 20pt !important;
+  color: #111827 !important;
+}
+
+.lesson-subtitle-hybrid {
+  color: #111827 !important;
+}
+
+
+/* ===== impression propre : aides et qcm ===== */
+.code-help-tooltip,
+.qcm-overlay,
+.qcm-card,
+.help-target::before,
+.help-target::after {
+  display: none !important;
+}
